@@ -10,6 +10,13 @@
             <h2>Agendamentos Cadastrados</h2>
             <a href="{{route('createschedule')}}"  class="btn btn-sm btn-secondary mb-2">Cadastrar Agendamento</a>
             <a target="_blank" href="{{route('schedulespdf',['download'=>'pdf'])}}"  class="btn btn-sm btn-secondary mb-2">Listar Consultas Pdf</a>
+            <div class="d-flex justify-content-end">
+
+                <form class="form-inline d-flex justify-content-end" action="/schedule" method="GET">
+                    <input class="form-control mr-sm-2" type="text" value="{{--$schedules->reason--}}" id="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                </form>
+
+            </div>
         </div>
 
         <table class="table table-striped table-hover">

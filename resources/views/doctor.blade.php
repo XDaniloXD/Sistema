@@ -5,8 +5,6 @@
         <x-menu>
             <!-- Menu / componentes -->
         </x-menu>
-
-        <div>teste</div>
       <div class="d-flex justify-content-between">
           <h2>Médicos Cadastrados</h2>
           <a href="{{route('createdoctor')}}"  class="btn btn-sm btn-secondary mb-2">Cadastrar Médico</a>
