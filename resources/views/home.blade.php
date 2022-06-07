@@ -52,7 +52,7 @@ window.onload = function(){
 		</ul>
 	</div>
 </header>
-
+    <div>teste</div>
 <section id="banner">
 	<div class="container column">
 		<div class="banner_headline">
@@ -100,7 +100,7 @@ window.onload = function(){
 					<div class="widget_title_bar"></div>
 				</div>
 				<div class="widget_body flex">
-						
+
 					<article>
 						<a href="">
 							<div class="news_data">
@@ -182,7 +182,7 @@ window.onload = function(){
 				<div class="widget_title">
 					<div class="widget_title_text">Departamentos</div>
 					<div class="widget_title_bar">
-						
+
 					</div>
 				</div>
 				<div class="widget_body">
