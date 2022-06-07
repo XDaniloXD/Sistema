@@ -52,7 +52,6 @@ window.onload = function(){
 		</ul>
 	</div>
 </header>
-    <div>teste</div>
 <section id="banner">
 	<div class="container column">
 		<div class="banner_headline">
