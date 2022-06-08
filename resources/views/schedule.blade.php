@@ -10,16 +10,8 @@
             <h2>Agendamentos Cadastrados</h2>
             <a href="{{route('createschedule')}}"  class="btn btn-sm btn-secondary mb-2">Cadastrar Agendamento</a>
             <a target="_blank" href="{{route('schedulespdf',['download'=>'pdf'])}}"  class="btn btn-sm btn-secondary mb-2">Listar Consultas Pdf</a>
-            <div class="d-flex justify-content-end">
-
-                <form class="form-inline d-flex justify-content-end" action="/schedule" method="GET">
-                    <input class="form-control mr-sm-2" type="text" value="{{--$schedules->reason--}}" id="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                </form>
-
-            </div>
         </div>
-
-        <table class="table table-striped table-hover">
+        <table id="pesquisa" class="table table-striped table-hover">    
             <thead class="table-info bg-light">
                 <tr>
                     <th>Paciente</th>
@@ -28,7 +20,7 @@
                     <th>Data </th>
                     <th>Hora</th>
                     <th>Diagnostico</th>
-                    <th>Editar / Excluir</th>
+                    <th>Editar  /  Excluir  / Gera PDF </th>
                 </tr>
             </thead>
             <tbody>
@@ -45,7 +37,7 @@
                             <form action="{{route('scheduledelete',$schedule->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger delete-btn ms-1">Deletar</button>
+                                <button type="submit" class="btn btn-danger delete-btn ms-1">Excluir</button>
                             </form>
                             <a target="_blank" href="{{route('schedulepdf', $schedule->id)}}" class="btn btn-info ms-1" >Gera Pdf</a>
                         </td>
@@ -58,5 +50,5 @@
             </tbody>
         </table>
     </div>
-
+    
 @endsection

@@ -13,7 +13,7 @@
             <a href="{{route('createpatient')}}"  class="btn btn-sm btn-secondary mb-2">Cadastrar Paciente</a>
         </div>
 
-        <table class="table table-striped table-hover">
+        <table id="pesquisa" class="table table-striped table-hover">
             <thead class="table-info">
                 <tr>
                     <th>Nome</th>
@@ -23,7 +23,7 @@
                     <th>Tipo-Sanguíneo</th>
                     <th>Contato</th>
                     <th>Endereço</th>
-                    <th>Editar / Excluir</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -41,7 +41,7 @@
                             <form action="{{route('patientdelete',$patient->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger delete-btn ms-1">Deletar</button>
+                                <button type="submit" class="btn btn-danger delete-btn ms-1">Excluir</button>
                             </form>
                         </td>
                     </tr>

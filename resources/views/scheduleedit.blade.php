@@ -18,21 +18,21 @@
                 <div class="col-md-6 mb-2">
                     <label for="patients_id"><strong>Paciente</strong></label>
                     <select class="js-example-basic-single form-control" name="patients_id">
-                        @if (!empty($patients))
+                        
                             @foreach ($patients as $patient)
                                 <option value="{{$patient->id}}">{{$patient->name}}</option>
                             @endforeach
-                        @endif
+                        
                       </select>
                 </div>
                 <div class="col-md-6">
                     <label for="doctors_id"><strong>Medico</strong></label>
                     <select class="js-example-basic-single form-control" name="doctors_id">
-                        @if (!empty($doctors))
+                        
                             @foreach ($doctors as $doctor)
                                 <option value="{{$doctor->id}}">{{$doctor->name}}</option>
                             @endforeach
-                        @endif
+                        
                       </select>
                 </div>
             <div class="row">

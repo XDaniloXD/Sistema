@@ -15,23 +15,10 @@ class ScheduleController extends Controller
     // Função Mostrando os agendamentos
     public function schedule()
     {
-        
-        $search = request('search');
-
-        if ($search) {
-
-            $schedules = Schedule::where([
-                ['reason', 'like', '%'.$search.'%']
-            ])->get();
-            
-        } else {
-            
         $schedules = Schedule::orderBy('date', 'asc')->orderBy('time', 'asc')->get();
-        
-        
-        }
-        return view('schedule',['schedules'=>$schedules, 'search'=>$search]);
+        return view('schedule', compact('schedules'));
     }
+
 
     //Função onde pega os medicos e pacientes, para criar pra ir para schedulestore
     public function createschedule()
@@ -89,10 +76,10 @@ class ScheduleController extends Controller
     //Função edit
     public function scheduleedit($id) {
 
-
+            $schedules = Schedule::where('id', $id)->first();
             $doctors= Doctor::all();
             $patients= Patient::all();
-            $schedules = Schedule::where('id', $id)->first();
+            
             if(!empty($schedules)) {
 
                 return view('scheduleedit',[

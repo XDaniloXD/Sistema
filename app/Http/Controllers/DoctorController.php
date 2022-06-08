@@ -17,7 +17,7 @@ class DoctorController extends Controller
 
     public function doctor()
     {
-        $doctors = Doctor::all();
+        $doctors = Doctor::orderBy('name', 'asc')->get();
 
         return view('doctor', compact('doctors'));
     }

@@ -7,11 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Bootstrap CSS -->
+        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    </head>
-    <div class="container mt-3">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+        
+        <!-- Pesquisar 
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"-->
+        
+   
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mt-3">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,23 +40,16 @@
                                 <a class="nav-link btn-info col px-md-3 ms-1"
                                     href="{{route('schedule')}}"><strong>Agendamento de Consulta</strong> </a>
                             </li>
-                            <div class="d-flex justify-content-end">
-                                <form class="form-inline d-flex justify-content-end">
-                                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Pesquisar</button>
-                                </form>
-                            </div>
                         </div>
                 </div>
         </nav>
-    </div>
+   
 
 
 
+    
 
-
-
-
+    
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
