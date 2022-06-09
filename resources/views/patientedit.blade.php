@@ -50,14 +50,35 @@
                            value="{{number_format($patient->height,2, '.', '.' )}}"
                            name="height">
                 </div>
+
                 <div class="form-group col-md-2">
+                    <label for="address">Tipo-Sanguíneo</label>
+                    <select class="form-control"
+                            name="blood"
+                            value="{{$patient->blood}}" 
+                            id="blood" 
+                            required 
+                            type="text">
+                            <option >A+</option>
+                            <option >B+</option>
+                            <option >AB+</option>
+                            <option >O+</option>
+                            <option >A-</option>
+                            <option >B-</option>
+                            <option >AB-</option>
+                            <option >O-</option>
+                    </select>
+
+                </div>
+
+              <!--  <div class="form-group col-md-2">
                     <label for="blood">Tipo-Sanguíneo</label>
                     <input type="text"
                            class="form-control"
                            required
                            value="{{$patient->blood}}"
                            name="blood">
-                </div>
+                </div> -->
             </div>
             <div class="row">
                 <div class="form-group col-md-12">

@@ -9,7 +9,6 @@
     <title>Clinica Medica</title>
     
 
-
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
 
@@ -25,11 +24,15 @@
     <!-- Usando Menu não ficar grande-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
     
+    
 </head>
 <body>
+   
 
-    @yield('content')
 
+    @yield('content') 
+    
+    
 </body>
 <script>
     $(document).ready(function () {
@@ -48,4 +51,5 @@
         });
     });
 </script>
+
 </html>

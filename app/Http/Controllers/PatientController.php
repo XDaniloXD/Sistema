@@ -38,14 +38,14 @@ class PatientController extends Controller
             'contatc'=>$request->contatc
         ]);
 
-        return redirect()->route('patient');
+        return redirect()->route('patient')->with('success','Paciente Cadastrado!!');
     }
 
     public function patientdelete($id) {
 
         $patient = Patient::findOrFail($id);
         $patient->delete();
-        return redirect('/patient')->with('Excluido com sucesso');
+        return redirect('/patient')->with('warning','Excluido com sucesso');
        // return redirect()->route('patient')->with('Agendamento excluido com sucesso!');
 
     }
@@ -84,7 +84,7 @@ class PatientController extends Controller
             'contatc'=>$request->contatc
         ];
         Patient::where('id', $id)->update($data);
-        return redirect()->route('patient');
+        return redirect()->route('patient')->with('success','Alteração Salva!!');
     }
 
     /**

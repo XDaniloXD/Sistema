@@ -49,14 +49,33 @@
                            id="height"
                            name="height">
                 </div>
-                <div class="form-group col-md-2">
+
+                    <div class="form-group col-md-2">
+                        <label for="address">Tipo-Sanguíneo</label>
+                        <select class="form-control "
+                                name="blood" 
+                                id="blood" 
+                                required 
+                                type="text">
+                                <option selected></option>
+                                <option >A+</option>
+                                <option >B+</option>
+                                <option >AB+</option>
+                                <option >O+</option>
+                                <option >A-</option>
+                                <option >B-</option>
+                                <option >AB-</option>
+                                <option >O-</option>
+						</select>
+                    </div>
+                <!--<div class="form-group col-md-2">
                     <label for="address">Tipo-Sanguíneo</label>
                     <input type="text"
                            class="form-control"
                            required
                            id="blood"
                            name="blood">
-                </div>
+                </div>-->
             </div>
             <div class="row">
                 <div class="form-group col-md-12">

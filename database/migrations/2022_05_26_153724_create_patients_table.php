@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('patients', function (Blueprint $table) {
-            $table->id();
+            $table->id()->onDelete('cascade');
             $table->string('name');
             $table->integer('age');
             $table->float('weight');

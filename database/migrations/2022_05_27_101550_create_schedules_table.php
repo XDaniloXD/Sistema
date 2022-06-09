@@ -17,8 +17,8 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patients_id')->references('id')->on('patients'); //paciente
-            $table->foreignId('doctors_id')->references('id')->on('doctors');  //Doctor
+            $table->foreignId('patients_id')->references('id')->on('patients')->onDelete('cascade')->onUpdate('cascade'); //paciente
+            $table->foreignId('doctors_id')->references('id')->on('doctors')->onDelete('cascade')->onUpdate('cascade');  //Doctor
             $table->string('reason');      //motivo
             $table->date('date');     // data e horario da consulta
             $table->time('time');

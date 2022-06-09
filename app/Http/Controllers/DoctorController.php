@@ -36,14 +36,14 @@ class DoctorController extends Controller
             'crm' => $request->crm
         ]);
 
-        return redirect()->route('doctor');
+        return redirect()->route('doctor')->with('success','Medico cadastrado com sucesso!!');
     }
 
     public function doctordelete($id) {
 
         $doctor = Doctor::findOrFail($id);
         $doctor->delete();
-        return redirect('/doctor')->with('Excluido com sucesso');
+        return redirect('/doctor')->with('warning','Medico excluido!!');
        // return redirect()->route('patient')->with('Agendamento excluido com sucesso!');
 
     }
@@ -77,7 +77,7 @@ class DoctorController extends Controller
             'crm' => $request->crm
         ];
         Doctor::where('id', $id)->update($data);
-        return redirect()->route('doctor');
+        return redirect()->route('doctor')->with('success','Alteração Salva!!');
 
     }
     /**

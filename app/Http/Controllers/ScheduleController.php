@@ -43,16 +43,16 @@ class ScheduleController extends Controller
             'diagnosis' => $request->diagnosis,
         ]);
 
-        return redirect()->route('schedule');
+        return redirect()->route('schedule')->with('success','Consulta Cadastrada!!');
     }
 
     //Função delete
     public function scheduledelete($id) {
 
-
+     
         $schedule = Schedule::find($id);
         $schedule->delete();
-        return redirect('/schedule')->with('Excluido com sucesso');
+        return redirect('/schedule')->with('warning','Consulta excluida!');
 
     }
 
@@ -61,7 +61,6 @@ class ScheduleController extends Controller
 
 
         $data = [
-            'patients_id' => $request->patients_id,
             'doctors_id' => $request->doctors_id,
             'reason' => $request->reason,
             'date' => $request->date,
@@ -69,30 +68,28 @@ class ScheduleController extends Controller
             'diagnosis' => $request->diagnosis,
         ];
         Schedule::where('id', $id)->update($data);
-        return redirect()->route('schedule');
+       
+        return redirect()->route('schedule')->with('success','Salvo com sucesso!');
     }
 
 
     //Função edit
-    public function scheduleedit($id) {
+    public function scheduleedit($id)
+    {
+       
+        $schedules = Schedule::where('id', $id)->first();
 
-            $schedules = Schedule::where('id', $id)->first();
-            $doctors= Doctor::all();
-            $patients= Patient::all();
-            
-            if(!empty($schedules)) {
+      
+        $doctors= Doctor::all();
+    
+        if(!empty($schedules)) {
 
-                return view('scheduleedit',[
-                'schedules'=>$schedules,
-                'doctors'=>$doctors,
-                'patients'=>$patients]);
-            }
-            else {
+            return view ('scheduleedit',compact('schedules','doctors'));
+        } else {
 
-                return redirect('/schedule');
-
-           }
+            return redirect('/schedule');
         }
+    }
 
 
     //public function exportToPDF() {
