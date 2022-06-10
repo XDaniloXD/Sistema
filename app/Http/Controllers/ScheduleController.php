@@ -60,7 +60,7 @@ class ScheduleController extends Controller
     //Função update
     public function scheduleupdate(Request $request, $id) {
 
-
+        
         $data = [
             'doctors_id' => $request->doctors_id,
             'reason' => $request->reason,
@@ -70,7 +70,7 @@ class ScheduleController extends Controller
             'diagnosis' => $request->diagnosis,
         ];
         Schedule::where('id', $id)->update($data);
-       
+        
         return redirect()->route('schedule')->with('success','Salvo com sucesso!');
     }
 
@@ -81,7 +81,7 @@ class ScheduleController extends Controller
        
         $schedules = Schedule::where('id', $id)->first();
 
-      
+        
         $doctors= Doctor::all();
     
         if(!empty($schedules)) {

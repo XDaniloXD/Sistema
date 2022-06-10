@@ -55,16 +55,19 @@
                     </div>
 
                     <div class="form-group col-md-3">
+                        
+                       
                         <div>
                             Consulta realizada? <br>
-                            <input type="checkbox" id="confirmed" name="confirmed" value="0">
+                            <input type="checkbox" id="nao" name="confirmed" value="0" {{( $schedules->comfirmed == 0 ? 'checked' : '')}}>
                             <label for="confirmed">Não</label>
-                        </div>
-    
+                        </div> 
+                        
                         <div>
-                            <input type="checkbox" id="confirmed" name="confirmed" value="1">
+                            <input type="checkbox" id="sim" name="confirmed"  value="1" {{ ($schedules->comfirmed == 1 ? 'checked' : '')}}>
                             <label for="confirmed">Sim</label>
                         </div>
+                        
                     </div>
     
 
