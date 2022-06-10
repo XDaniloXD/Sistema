@@ -19,6 +19,7 @@
                     <th>Motivo</th>
                     <th>Data </th>
                     <th>Hora</th>
+                    <th>Realizada</th>
                     <th>Diagnostico</th>
                     <th>Editar  /  Excluir  / Gera PDF </th>
                 </tr>
@@ -31,6 +32,18 @@
                         <td> {{ $schedule->reason }} </td>
                         <td> {{Carbon\Carbon::parse($schedule->date)->format('d/m/Y')}} </td>
                         <td> {{Carbon\Carbon::parse($schedule->time)->format('H:i') }} </td>
+                        <td>
+                            
+                            @if ($schedule->confirmed == 1)
+                                Sim
+                            @else
+                                Não
+                            @endif
+
+                            {{--$schedule->confirmed--}}
+                        
+                        
+                        </td>
                         <td> {!! substr($schedule->diagnosis, 0, 10)!!} </td>
                         <td class="d-flex">
                             <a href="{{route('scheduleedit', $schedule->id)}}" class="btn btn-info edit-btn ms-1">Editar</a>

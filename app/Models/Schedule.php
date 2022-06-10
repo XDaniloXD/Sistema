@@ -14,6 +14,7 @@ class Schedule extends Model
         'reason',
         'date',
         'time',
+        'confirmed',
         'diagnosis'
 
     ];

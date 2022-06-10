@@ -54,6 +54,20 @@
 
                     </div>
 
+                    <div class="form-group col-md-3">
+                        <div>
+                            Consulta realizada? <br>
+                            <input type="checkbox" id="confirmed" name="confirmed" value="0">
+                            <label for="confirmed">Não</label>
+                        </div>
+    
+                        <div>
+                            <input type="checkbox" id="confirmed" name="confirmed" value="1">
+                            <label for="confirmed">Sim</label>
+                        </div>
+                    </div>
+    
+
                     <div class="form-group col-md-50">
                         <hr>
                         <label>Diaginostico</label>

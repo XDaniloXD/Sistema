@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('reason');      //motivo
             $table->date('date');     // data e horario da consulta
             $table->time('time');
+            $table->boolean('confirmed')->notnull();
             $table->longText('diagnosis')->nullable();  //diagnostrico medico
             $table->timestamps();
         });

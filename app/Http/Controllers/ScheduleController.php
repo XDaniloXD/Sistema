@@ -40,6 +40,7 @@ class ScheduleController extends Controller
             'reason' => $request->reason,
             'date' => $request->date,
             'time'=>$request->time,
+            'confirmed'=>$request->confirmed,
             'diagnosis' => $request->diagnosis,
         ]);
 
@@ -65,6 +66,7 @@ class ScheduleController extends Controller
             'reason' => $request->reason,
             'date' => $request->date,
             'time'=>$request->time,
+            'confirmed'=>$request->confirmed,
             'diagnosis' => $request->diagnosis,
         ];
         Schedule::where('id', $id)->update($data);
