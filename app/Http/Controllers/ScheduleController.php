@@ -50,7 +50,7 @@ class ScheduleController extends Controller
     //Função delete
     public function scheduledelete($id) {
 
-     
+
         $schedule = Schedule::find($id);
         $schedule->delete();
         return redirect('/schedule')->with('warning','Consulta excluida!');
@@ -60,7 +60,7 @@ class ScheduleController extends Controller
     //Função update
     public function scheduleupdate(Request $request, $id) {
 
-        
+
         $data = [
             'doctors_id' => $request->doctors_id,
             'reason' => $request->reason,
@@ -70,7 +70,7 @@ class ScheduleController extends Controller
             'diagnosis' => $request->diagnosis,
         ];
         Schedule::where('id', $id)->update($data);
-        
+
         return redirect()->route('schedule')->with('success','Salvo com sucesso!');
     }
 
@@ -78,12 +78,12 @@ class ScheduleController extends Controller
     //Função edit
     public function scheduleedit($id)
     {
-       
+
         $schedules = Schedule::where('id', $id)->first();
 
-        
+
         $doctors= Doctor::all();
-    
+        //dd($schedules);
         if(!empty($schedules)) {
 
             return view ('scheduleedit',compact('schedules','doctors'));

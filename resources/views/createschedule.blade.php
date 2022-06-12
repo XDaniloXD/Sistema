@@ -65,15 +65,14 @@
                 <div class="form-group col-md-3">
                     <div>
                         Consulta realizada? <br>
-                        <input type="checkbox" id="scales" name="confirmed"
-                                value="0"
+                        <input type="radio" id="nao" name="confirmed" value="0"
                                 checked>
-                        <label for="confirmed">Não</label>
+                        <label for="nao">Não</label>
                     </div>
 
                     <div>
-                        <input type="checkbox" id="confirmed" name="confirmed" value="1">
-                        <label for="confirmed">Sim</label>
+                        <input type="radio" id="sim" name="confirmed" value="1">
+                        <label for="sim">Sim</label>
                     </div>
                 </div>
 

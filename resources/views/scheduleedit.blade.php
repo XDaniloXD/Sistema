@@ -1,5 +1,5 @@
 @extends('templates.template')
-         
+
 
 @section('content')
 
@@ -11,14 +11,14 @@
 
         <div class="d-flex justify-content-between">
             <h2>Editar Consulta</h2>
-           
+
             <a href="{{ route('schedule') }}" class="btn btn-sm btn-secondary mb-2">Lista de Consultas</a>
         </div>
         <form class="card card-body" method="POST" action="{{ route('scheduleupdate.update', $schedules->id) }}">
             @csrf
             @method('PUT')
             <div class="row">
-                
+
                 <div class="col-md-6 mb-2">
                     <label class="mb-2"><strong>Paciente</strong></label>
                     <input type="text" class="form-control " name="patients_id" value="{{$schedules->patients->name}} "disabled>
@@ -55,21 +55,23 @@
                     </div>
 
                     <div class="form-group col-md-3">
-                        
-                       
+
+
                         <div>
                             Consulta realizada? <br>
-                            <input type="checkbox" id="nao" name="confirmed" value="0" {{( $schedules->comfirmed == 0 ? 'checked' : '')}}>
-                            <label for="confirmed">Não</label>
-                        </div> 
-                        
-                        <div>
-                            <input type="checkbox" id="sim" name="confirmed"  value="1" {{ ($schedules->comfirmed == 1 ? 'checked' : '')}}>
-                            <label for="confirmed">Sim</label>
+
+                            <label for="nao">Não</label>
+                                <input type="radio" id="nao" name="confirmed" value="0" {{ ($schedules->confirmed == 0 ? 'checked' : '')}}>
+
                         </div>
-                        
+
+                        <div>
+                            <label for="sim">Sim</label>
+                                <input type="radio" id="sim" name="confirmed"  value="1" {{ ($schedules->confirmed == 1 ? 'checked' : '')}}>
+                        </div>
+
                     </div>
-    
+
 
                     <div class="form-group col-md-50">
                         <hr>
@@ -77,7 +79,7 @@
 
                         <hr>
                         <textarea class="form-control" name="diagnosis" id="diagnosis">
-                    {{ $schedules->diagnosis }}
+                         {{ $schedules->diagnosis }}
                 </textarea>
 
                     </div>
