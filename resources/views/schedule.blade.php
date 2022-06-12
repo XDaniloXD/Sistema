@@ -11,7 +11,7 @@
             <a href="{{route('createschedule')}}"  class="btn btn-sm btn-secondary mb-2">Cadastrar Agendamento</a>
             <a target="_blank" href="{{route('schedulespdf',['download'=>'pdf'])}}"  class="btn btn-sm btn-secondary mb-2">Listar Consultas Pdf</a>
         </div>
-        <table id="pesquisa" class="table table-striped table-hover">    
+        <table id="pesquisa" class="table table-striped table-hover">
             <thead class="table-info bg-light">
                 <tr>
                     <th>Paciente</th>
@@ -32,18 +32,7 @@
                         <td> {{ $schedule->reason }} </td>
                         <td> {{Carbon\Carbon::parse($schedule->date)->format('d/m/Y')}} </td>
                         <td> {{Carbon\Carbon::parse($schedule->time)->format('H:i') }} </td>
-                        <td>
-                            
-                            @if ($schedule->confirmed == 1)
-                                Sim
-                            @else
-                                Não
-                            @endif
-
-                            {{--$schedule->confirmed--}}
-                        
-                        
-                        </td>
+                        <td> {{ ($schedule->confirmed == 1 ? 'Sim' : 'Não')}}</td>
                         <td> {!! substr($schedule->diagnosis, 0, 10)!!} </td>
                         <td class="d-flex">
                             <a href="{{route('scheduleedit', $schedule->id)}}" class="btn btn-info edit-btn ms-1">Editar</a>
@@ -63,5 +52,5 @@
             </tbody>
         </table>
     </div>
-    
+
 @endsection
