@@ -7,7 +7,7 @@
   <link href=" asset('css/app.css') " rel="stylesheet" type="text/css" />
 </head>
 <body>
-
+<div class="row">
     <div class="text-center text-info">
         <h2>Clinica Medica Medicenter</h2>
     </div>
@@ -28,7 +28,7 @@
     </table>
 </div>
 
-<div class="row">
+
     <div class="form-group col-md-3">
 
         <h5>Paciente:</h5>

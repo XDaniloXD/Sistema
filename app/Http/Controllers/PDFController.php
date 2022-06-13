@@ -22,7 +22,7 @@ class PDFController extends Controller
     */
     public function exportToPDF(Request $request)
     {
-
+        
         $schedules = Schedule::all();
 
         if($request->has('download'))

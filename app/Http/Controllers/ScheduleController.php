@@ -13,11 +13,33 @@ use PDF;
 class ScheduleController extends Controller
 {
     // Função Mostrando os agendamentos
+
+
+
     public function schedule()
     {
-        $schedules = Schedule::orderBy('date', 'asc')->orderBy('time', 'asc')->get();
+        
+        $schedules = Schedule::where('confirmed', 0 )->orderBy('date', 'asc')->orderBy('time', 'asc')->get();
         return view('schedule', compact('schedules'));
     }
+
+
+    public function schedulesim()
+    {
+
+        $schedules = Schedule::where('confirmed', 1 )->orderBy('date', 'asc')->orderBy('time', 'asc')->get();
+        return view('schedule', compact('schedules'));
+
+    }
+
+    public function scheduletodas()
+    {
+
+        $schedules = Schedule::orderBy('date', 'asc')->orderBy('time', 'asc')->get();
+        return view('schedule', compact('schedules'));
+
+    }
+
 
 
     //Função onde pega os medicos e pacientes, para criar pra ir para schedulestore

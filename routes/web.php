@@ -64,6 +64,8 @@ Route::post('/schedulestore',[ScheduleController::class,'schedulestore'])->name(
 Route::delete('/schedule/{id}',[ScheduleController::class,'scheduledelete'])->name('scheduledelete');
 Route::get('/{id}/edit',[ScheduleController::class,'scheduleedit'])->name('scheduleedit');
 Route::put('atualizar/{id}',[ScheduleController::class,'scheduleupdate'])->name('scheduleupdate.update');
+Route::get('/schedulesim', [ScheduleController::class,'schedulesim'])->name('schedulesim');
+Route::get('/scheduletodas', [ScheduleController::class,'scheduletodas'])->name('scheduletodas');
 
 //Pdf lista de consultas
 Route::get('/schedulespdf', [PDFController::class, 'exportToPDF'])->name('schedulespdf');

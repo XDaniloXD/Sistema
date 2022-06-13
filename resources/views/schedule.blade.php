@@ -8,11 +8,26 @@
 
         <div class="d-flex justify-content-between">
             <h2>Agendamentos Cadastrados</h2>
-            <a href="{{route('createschedule')}}"  class="btn btn-sm btn-secondary mb-2">Cadastrar Agendamento</a>
-            <a target="_blank" href="{{route('schedulespdf',['download'=>'pdf'])}}"  class="btn btn-sm btn-secondary mb-2">Listar Consultas Pdf</a>
         </div>
+
+        <div class="d-flex justify-content-end">
+            <div class="d-flex ms-5 justify-content-start ">
+                <a href="{{route('createschedule')}}"  class="btn btn-sm btn-success mb-2 ms-1">Cadastrar Agendamento</a>
+                <a target="_blank" href="{{route('schedulespdf',['download'=>'pdf'])}}"  class="btn btn-sm btn-secondary mb-2 ms-1">Listar Consultas Pdf</a>
+            </div>
+
+            <div class="d-flex ms-5  ">
+            <a href="{{route('schedule')}}"  class="btn btn-sm btn btn-primary mb-2  ms-1">A Consultar</a>
+            <a href="{{route('schedulesim')}}"  class="btn btn-sm btn btn-primary mb-2  ms-1">Realizadas</a>
+            <a href="{{route('scheduletodas')}}"  class="btn btn-sm btn btn-primary mb-2  ms-1">Todas</a>
+            </div>
+        </div>
+
         <table id="pesquisa" class="table table-striped table-hover">
+
+       
             <thead class="table-info bg-light">
+                
                 <tr>
                     <th>Paciente</th>
                     <th>Medico</th>

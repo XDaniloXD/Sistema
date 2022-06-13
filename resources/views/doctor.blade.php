@@ -7,7 +7,7 @@
         </x-menu>
         <div class="d-flex justify-content-between ">
             <h2>Médicos Cadastrados</h2>
-            <a href="{{route('createdoctor')}}"  class="btn btn-sm btn-secondary mb-2">Cadastrar Médico</a>
+            <a href="{{route('createdoctor')}}"  class="btn btn-sm btn-success mb-2">Cadastrar Médico</a>
         </div>
           <div class=" ">
             <table  id="pesquisa" class="table table-striped table-hover">

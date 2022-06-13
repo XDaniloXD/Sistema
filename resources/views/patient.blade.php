@@ -10,7 +10,7 @@
 
         <div class="d-flex justify-content-between">
             <h2>Pacientes Cadastrados</h2>
-            <a href="{{route('createpatient')}}"  class="btn btn-sm btn-secondary mb-2">Cadastrar Paciente</a>
+            <a href="{{route('createpatient')}}"  class="btn btn-sm btn-success mb-2">Cadastrar Paciente</a>
         </div>
 
         <table id="pesquisa" class="table table-striped table-hover">
