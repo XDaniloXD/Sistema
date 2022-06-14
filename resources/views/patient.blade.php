@@ -13,7 +13,7 @@
             <a href="{{route('createpatient')}}"  class="btn btn-sm btn-success mb-2">Cadastrar Paciente</a>
         </div>
 
-        <table id="pesquisa" class="table table-striped table-hover">
+        <table id="pesquisa" class="table table-striped table-hover ">
             <thead class="table-info">
                 <tr>
                     <th>Nome</th>
@@ -37,7 +37,7 @@
                         <td> {{ $patient->contatc}}</td>
                         <td> {{ $patient->address }} </td>
                         <td class="d-flex">
-                            <a href="{{route('patientedit', $patient->id)}}" class="btn btn-info edit-btn ms-1">  Editar</a>
+                            <a href="{{route('patientedit', $patient->id)}}" class="btn btn-primary edit-btn ms-1">  Editar</a>
                             <form action="{{route('patientdelete',$patient->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -53,5 +53,7 @@
             </tbody>
         </table>
     </div>
+    <x-footer>
 
+    </x-footer>
 @endsection

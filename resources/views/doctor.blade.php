@@ -30,7 +30,7 @@
                         <td> {{ $doctor->crm}} </td>
                         <td></td>
                         <td class="d-flex justify-content-end">
-                          <a href="{{route('doctoredit', $doctor->id)}}" class="btn btn-info edit-btn ms-1">  Editar</a>
+                          <a href="{{route('doctoredit', $doctor->id)}}" class="btn btn-primary edit-btn ms-1">  Editar</a>
                           <form action="{{route('doctordelete',$doctor->id)}}" method="POST">
                               @csrf
                               @method('DELETE')
