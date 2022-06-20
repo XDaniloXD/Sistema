@@ -18,7 +18,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>Idade</th>
-                    <th>Peso - Kg</th>
+                    <th>Peso Kg</th>
                     <th>Altura</th>
                     <th>Tipo-Sanguíneo</th>
                     <th>Contato</th>
