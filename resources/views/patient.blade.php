@@ -10,7 +10,10 @@
 
         <div class="d-flex justify-content-between">
             <h2>Pacientes Cadastrados</h2>
-            <a href="{{route('createpatient')}}"  class="btn btn-sm btn-success mb-2">Cadastrar Paciente</a>
+            <a href="{{route('createpatient')}}"  class="btn btn-sm btn-success mb-2">
+                Cadastrar Paciente
+                <img src="/images/patient.png" width="30"  />
+            </a>
         </div>
 
         <table id="pesquisa" class="table table-striped table-hover ">
@@ -35,13 +38,20 @@
                         <td> {{ number_format($patient->height,2, '.', '.' )}} </td>
                         <td> {{ $patient->blood}} </td>
                         <td> {{ $patient->contatc}}</td>
-                        <td> {{ $patient->address }} </td>
+                        <td> {{ substr($patient->address, 0, 20)}} </td>
                         <td class="d-flex">
-                            <a href="{{route('patientedit', $patient->id)}}" class="btn btn-primary edit-btn ms-1">  Editar</a>
+                            <a href="{{route('patientver', $patient->id)}}" class="btn btn-info edit-btn ms-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar">
+                                <img src="/images/visu.png" width="25" />
+                            </a>
+                            <a href="{{route('patientedit', $patient->id)}}" class="btn btn-primary edit-btn ms-1"data-bs-toggle="tooltip" data-bs-placement="top" title="Editar">
+                                <img src="/images/edita.png" width="25" />
+                            </a>
                             <form action="{{route('patientdelete',$patient->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger delete-btn ms-1">Excluir</button>
+                                <button type="submit" class="btn btn-danger delete-btn ms-1"data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir">
+                                    <img src="/images/excluir.png" width="25" />
+                                </button>
                             </form>
                         </td>
                     </tr>

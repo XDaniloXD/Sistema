@@ -67,7 +67,30 @@ class PatientController extends Controller
             return redirect('/patient');
 
        }
+       
+       
+       
+    }
 
+    public function patientver($id) 
+    {
+
+        
+        $patients = Patient::where('id', $id)->first();
+        if(!empty($patients)) {
+
+            return view('patientver',[
+            'patient'=>$patients, 
+        
+        ]);
+    
+        }
+        else {
+
+            return redirect('/patient');
+
+       }
+       
        
        
     }

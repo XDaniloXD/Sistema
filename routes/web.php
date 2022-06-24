@@ -48,6 +48,7 @@ Route::post('/doctorstore',[DoctorController::class,'doctorstore'])->name('docto
 Route::delete('doctordelete/{id}', [DoctorController::class,'doctordelete'])->name('doctordelete');
 Route::get('doctoredit/{id}', [DoctorController::class,'doctoredit'])->name('doctoredit');
 Route::put('doctorupdtade/{id}', [DoctorController::class,'doctorupdtade'])->name('doctorupdtade');
+Route::get('doctorver/{id}', [DoctorController::class,'doctorver'])->name('doctorver');
 
 ///Rotas Pacientes
 Route::get('/patient',[PatientController::class,'patient'])->name('patient');
@@ -56,6 +57,7 @@ Route::post('/patientstore', [PatientController::class,'patientstore'])->name('p
 Route::delete('/patient/{id}', [PatientController::class, 'patientdelete'])->name('patientdelete');
 Route::get('/patientedit/{id}/edit', [PatientController::class, 'patientedit'])->name('patientedit');
 Route::put('/patientupdate/{id}/edit', [PatientController::class, 'patientupdate'])->name('patientupdate');
+Route::get('/patientver/{id}/ver', [PatientController::class, 'patientver'])->name('patientver');
 
 
 //Rotas Agendametos
@@ -67,13 +69,14 @@ Route::get('/{id}/edit',[ScheduleController::class,'scheduleedit'])->name('sched
 Route::put('atualizar/{id}',[ScheduleController::class,'scheduleupdate'])->name('scheduleupdate.update');
 Route::get('/schedulesim', [ScheduleController::class,'schedulesim'])->name('schedulesim');
 Route::get('/scheduletodas', [ScheduleController::class,'scheduletodas'])->name('scheduletodas');
+Route::get('/schedulever/{id}/ver', [ScheduleController::class,'schedulever'])->name('schedulever');
 
 //Pdf lista de consultas
 Route::get('/schedulespdf', [PDFController::class, 'exportToPDF'])->name('schedulespdf');
 Route::get('/schedulepdf/{id}', [PDFController::class, 'exportOnePDF'])->name('schedulepdf');
 
 //sms
-Route::get('send-sms-notification', [NotificationController::class, 'sendSmsNotificaition']);
+Route::get('/send-sms-notification', [NotificationController::class, 'sendSmsNotificaition']);
 
 /// teste
 

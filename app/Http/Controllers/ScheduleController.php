@@ -115,6 +115,24 @@ class ScheduleController extends Controller
         }
     }
 
+    
+    public function schedulever($id)
+    {
+
+        $schedules = Schedule::where('id', $id)->first();
+
+
+        $doctors= Doctor::all();
+        //dd($schedules);
+        if(!empty($schedules)) {
+
+            return view ('schedulever',compact('schedules','doctors'));
+        } else {
+
+            return redirect('/schedule');
+        }
+    }
+
 
     //public function exportToPDF() {
 

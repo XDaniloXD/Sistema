@@ -67,6 +67,25 @@ class DoctorController extends Controller
        }
 
     }
+    public function doctorver($id) {
+
+        
+        $doctors = Doctor::where('id', $id)->first();
+        if(!empty($doctors)) {
+
+            return view('doctorver',[
+            'doctor'=>$doctors, 
+        
+        ]);
+    
+        }
+        else {
+
+            return redirect('/doctor');
+
+       }
+
+    }
 
     public function doctorupdtade(Request $request, $id) {
 

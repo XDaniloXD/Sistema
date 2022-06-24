@@ -42,7 +42,7 @@
                     <th>Realizada</th>
                     {{--<th>Diagnostico</th>--}}
                     <th></th>
-                    <th>Editar  /  Excluir  / Gera PDF </th>
+                    <th>Visualizar / Editar  /  Excluir  </th>
                 </tr>
             </thead>
             <tbody>
@@ -56,13 +56,20 @@
                         <td> {{ ($schedule->confirmed == 1 ? 'Sim' : 'Não')}}</td>
                         <td> {{--!! substr($schedule->diagnosis, 0, 10)!!--}} </td>
                         <td class="d-flex">
-                            <a href="{{route('scheduleedit', $schedule->id)}}" class="btn btn-primary edit-btn ms-1 rounded">Editar</a>
+                            <a href="{{route('schedulever', $schedule->id)}}" class="btn btn-info edit-btn ms-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar">
+                                <img src="/images/visu.png" width="25" />
+                            </a>
+                            <a href="{{route('scheduleedit', $schedule->id)}}" class="btn btn-primary edit-btn ms-1 rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar">
+                                <img src="/images/edita.png" width="25" />
+                            </a>
                             <form action="{{route('scheduledelete',$schedule->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger delete-btn ms-1 rounded">Excluir</button>
+                                    <button type="submit" class="btn btn-danger delete-btn ms-1 rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir">
+                                        <img src="/images/excluir.png" width="25" />
+                                    </button>
                             </form>
-                            <a target="_blank" href="{{route('schedulepdf', $schedule->id)}}" class="btn btn-dark ms-1 rounded" >Gera Pdf</a>
+                            {{--<a target="_blank" href="{{route('schedulepdf', $schedule->id)}}" class="btn btn-dark ms-1 rounded" >Pdf</a>--}}
                         </td>
                     </tr>
                 @empty

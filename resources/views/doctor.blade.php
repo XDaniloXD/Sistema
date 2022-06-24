@@ -7,7 +7,10 @@
         </x-menu>
         <div class="d-flex justify-content-between ">
             <h2>Médicos Cadastrados</h2>
-            <a href="{{route('createdoctor')}}"  class="btn btn-sm btn-success mb-2">Cadastrar Médico</a>
+            <a href="{{route('createdoctor')}}"  class="btn btn-sm btn-success mb-2 text-center">
+                        Cadastar Médico
+              <img src="/images/doctor.png" width="30" />
+            </a>
         </div>
           <div class=" ">
             <table  id="pesquisa" class="table table-striped table-hover">
@@ -30,11 +33,18 @@
                         <td> {{ $doctor->crm}} </td>
                         <td></td>
                         <td class="d-flex justify-content-end">
-                          <a href="{{route('doctoredit', $doctor->id)}}" class="btn btn-primary edit-btn ms-1">  Editar</a>
+                          <a href="{{route('doctorver', $doctor->id)}}" class="btn btn-info edit-btn ms-1 text-white " data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar">
+                            <img src="/images/visu.png" width="25" />
+                          </a>
+                          <a href="{{route('doctoredit', $doctor->id)}}" class="btn btn-primary edit-btn ms-1"data-bs-toggle="tooltip" data-bs-placement="top" title="Editar">
+                            <img src="/images/edita.png" width="25" />
+                          </a>
                           <form action="{{route('doctordelete',$doctor->id)}}" method="POST">
                               @csrf
                               @method('DELETE')
-                              <button type="submit" class="btn btn-danger delete-btn ms-1">Excluir</button>
+                              <button type="submit" class="btn btn-danger delete-btn ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir">
+                                <img src="/images/excluir.png" width="25" alt="Excluir" />
+                              </button>
                           </form>
                       </td>
                     </tr>
