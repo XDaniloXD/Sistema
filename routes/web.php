@@ -6,6 +6,7 @@ use App\Http\Controllers\ {
     PatientController,
     PDFController,
     ScheduleController,
+    NotificationController,
 
 
 };
@@ -70,6 +71,9 @@ Route::get('/scheduletodas', [ScheduleController::class,'scheduletodas'])->name(
 //Pdf lista de consultas
 Route::get('/schedulespdf', [PDFController::class, 'exportToPDF'])->name('schedulespdf');
 Route::get('/schedulepdf/{id}', [PDFController::class, 'exportOnePDF'])->name('schedulepdf');
+
+//sms
+Route::get('send-sms-notification', [NotificationController::class, 'sendSmsNotificaition']);
 
 /// teste
 

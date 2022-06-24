@@ -25,19 +25,19 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link btn-info col px-md-3 ms-1"
+                                <a class="nav-link btn-info col px-md-3 ms-1 rounded"
                                     href="{{route('dashboard')}}"><strong>início</strong></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link btn-info col px-md-3 ms-1"
+                                <a class="nav-link btn-info col px-md-3 ms-1 rounded"
                                     href="{{route('doctor')}}"><strong>Médicos</strong></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link btn-info col px-md-3 ms-1"
+                                <a class="nav-link btn-info col px-md-3 ms-1 rounded"
                                     href="{{route('patient')}}"><strong>Pacientes</strong></a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link btn-info col px-md-3 ms-1"
+                                <a class="nav-link btn-info col px-md-3 ms-1 rounded"
                                     href="{{route('schedule')}}"><strong>Agendamento de Consulta</strong> </a>
                             </li>
                         </div>

@@ -56,13 +56,13 @@
                         <td> {{ ($schedule->confirmed == 1 ? 'Sim' : 'Não')}}</td>
                         <td> {{--!! substr($schedule->diagnosis, 0, 10)!!--}} </td>
                         <td class="d-flex">
-                            <a href="{{route('scheduleedit', $schedule->id)}}" class="btn btn-primary edit-btn ms-1">Editar</a>
+                            <a href="{{route('scheduleedit', $schedule->id)}}" class="btn btn-primary edit-btn ms-1 rounded">Editar</a>
                             <form action="{{route('scheduledelete',$schedule->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger delete-btn ms-1">Excluir</button>
+                                <button type="submit" class="btn btn-danger delete-btn ms-1 rounded">Excluir</button>
                             </form>
-                            <a target="_blank" href="{{route('schedulepdf', $schedule->id)}}" class="btn btn-dark ms-1" >Gera Pdf</a>
+                            <a target="_blank" href="{{route('schedulepdf', $schedule->id)}}" class="btn btn-dark ms-1 rounded" >Gera Pdf</a>
                         </td>
                     </tr>
                 @empty
