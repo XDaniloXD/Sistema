@@ -26,7 +26,7 @@
                     <th>Tipo-Sanguíneo</th>
                     <th>Contato</th>
                     <th>Endereço</th>
-                    <th></th>
+                    <th>Visualizar / Editar  /  Excluir  </th>
                 </tr>
             </thead>
             <tbody>

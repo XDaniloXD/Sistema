@@ -21,7 +21,7 @@
                       <th scope="col">Especialidade</th>
                       <th scope="col">CRM</th>
                       <th scope="col"></th>
-                      <th scope="col"></th>
+                      <th scope="col">Visualizar / Editar  /  Excluir  </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -32,7 +32,7 @@
                         <td> {{ $doctor->especialidade}}</td>
                         <td> {{ $doctor->crm}} </td>
                         <td></td>
-                        <td class="d-flex justify-content-end">
+                        <td class="d-flex ">
                           <a href="{{route('doctorver', $doctor->id)}}" class="btn btn-info edit-btn ms-1 text-white " data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar">
                             <img src="/images/visu.png" width="25" />
                           </a>
