@@ -55,33 +55,46 @@
                            disabled>
                 </div>
 
+                    
+                <div class="form-group col-md-2">
+                    <label for="sexo">Sexo</label>
+                    <select class="form-control"
+                            name="sexo"
+                            required 
+                            type="text"
+                            disabled>
+                            <option value="Feminino" {{($patient->sexo == 'Feminino' ? 'selected' : '')}}>Feminino</option>
+                            <option  value="Masculino" {{($patient->sexo == 'Masculino' ? 'selected' : '')}}>Masculino</option>
+                    </select>
+                </div>
+
                 <div class="form-group col-md-2">
                     <label for="address">Tipo-Sanguíneo</label>
                     <select class="form-control"
                             name="blood"
-                            value="{{$patient->blood}}" 
                             id="blood" 
                             required 
                             type="text"
                             disabled>
-                            <option >A+</option>
-                            <option >B+</option>
-                            <option >AB+</option>
-                            <option >O+</option>
-                            <option >A-</option>
-                            <option >B-</option>
-                            <option >AB-</option>
-                            <option >O-</option>
+                            <option value="A+"  {{($patient->blood == 'A+'  ? 'selected' : '')}} >A+</option>
+                            <option value="B+"  {{($patient->blood == 'B+'  ? 'selected' : '')}} >B+</option>
+                            <option value="AB+" {{($patient->blood == 'AB+' ? 'selected' : '')}} >AB+</option>
+                            <option value="O+"  {{($patient->blood == 'O+'  ? 'selected' : '')}} >O+</option>
+                            <option value="A-"  {{($patient->blood == 'A-'  ? 'selected' : '')}} >A-</option>
+                            <option value="B-"  {{($patient->blood == 'B-'  ? 'selected' : '')}} >B-</option>
+                            <option value="AB-" {{($patient->blood == 'AB-' ? 'selected' : '')}} >AB-</option>
+                            <option value="O-"  {{($patient->blood == 'O-'  ? 'selected' : '')}} >O-</option>
                     </select>
 
                 </div>
+
 
               <!--  <div class="form-group col-md-2">
                     <label for="blood">Tipo-Sanguíneo</label>
                     <input type="text"
                            class="form-control"
                            required
-                           value="{{$patient->blood}}"
+                           value="{{--$patient->blood--}}"
                            name="blood">
                 </div> -->
             </div>

@@ -50,6 +50,19 @@
                            name="height">
                 </div>
 
+                <div class="form-group col-md-2">
+                    <label for="sexo">Sexo</label>
+                    <select class="form-control "
+                            name="sexo" 
+                            id="sexo" 
+                            required 
+                            type="text">
+                            <option selected></option>
+                            <option >Masculino</option>
+                            <option >Feminino</option>
+                    </select>
+                </div>
+
                     <div class="form-group col-md-2">
                         <label for="address">Tipo-Sanguíneo</label>
                         <select class="form-control "

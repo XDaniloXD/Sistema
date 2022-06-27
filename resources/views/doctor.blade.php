@@ -50,7 +50,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="3" class="text-center">Não há Médicos cadastrados</td>
+                        <td colspan="12" class="text-center"> <strong>Não há Médicos cadastrados</strong></td>
                     </tr>
                 @endforelse
                   </tbody>

@@ -14,6 +14,7 @@ class Patient extends Model
         'weight',
         'height',
         'address',
+        'sexo',
         'blood',
         'contatc'
     ];

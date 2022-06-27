@@ -16,13 +16,14 @@
             </a>
         </div>
 
-        <table id="pesquisa" class="table table-striped table-hover ">
+        <table id="pesquisa" class="table table-striped table-hover">
             <thead class="table-info">
                 <tr>
                     <th>Nome</th>
                     <th>Idade</th>
                     <th>Peso Kg</th>
                     <th>Altura</th>
+                    <th>Sexo</th>
                     <th>Tipo-Sanguíneo</th>
                     <th>Contato</th>
                     <th>Endereço</th>
@@ -36,9 +37,13 @@
                         <td> {{ $patient->age }} </td>
                         <td> {{ number_format($patient->weight,1,'.', '.' )}} </td>
                         <td> {{ number_format($patient->height,2, '.', '.' )}} </td>
+                        <td> {{ $patient->sexo}}</td>
                         <td> {{ $patient->blood}} </td>
                         <td> {{ $patient->contatc}}</td>
-                        <td> {{ substr($patient->address, 0, 20)}} </td>
+                        <td> {{ substr($patient->address, 0, 15)}} </td>
+
+                        {{-- Botoes  Visualizar / Editar / Excluir--}}
+
                         <td class="d-flex">
                             <a href="{{route('patientver', $patient->id)}}" class="btn btn-info edit-btn ms-1 text-white" data-bs-toggle="tooltip" data-bs-placement="top" title="Visualizar">
                                 <img src="/images/visu.png" width="25" />
@@ -57,7 +62,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="5" class="text-center">Não há Pacientes cadastrados</td>
+                        <td colspan="12" class="text-center"> <strong>Não há Pacientes cadastrados</strong> </td>
                     </tr>
                 @endforelse
             </tbody>

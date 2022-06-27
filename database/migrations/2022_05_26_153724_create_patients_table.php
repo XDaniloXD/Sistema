@@ -20,6 +20,7 @@ return new class extends Migration
             $table->float('weight');
             $table->float('height');
             $table->string('address');
+            $table->string('sexo');
             $table->string('blood');
             $table->string('contatc');
             $table->timestamps();
