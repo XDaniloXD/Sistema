@@ -42,8 +42,9 @@ class PatientController extends Controller
         return redirect()->route('patient')->with('success','Paciente Cadastrado!!');
     }
 
-    public function patientdelete($id) {
-
+    public function patientdelete(Request $request, $id) {
+        
+        $id = $request['patient_id'];
         $patient = Patient::findOrFail($id);
         $patient->delete();
         return redirect('/patient')->with('warning','Excluido com sucesso');

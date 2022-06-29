@@ -54,9 +54,37 @@
                             <form action="{{route('patientdelete',$patient->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger delete-btn ms-1"data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir">
-                                    <img src="/images/excluir.png" width="25" />
+                                <button type="button" class="btn btn-danger delete-btn ms-1" 
+                                        data-bs-toggle="modal" data-bs-toggle="tooltip" data-bs-placement="top" 
+                                        data-bs-target="#deleteModal" data-id="{{$patient->id}}" title="Excluir">
+
+                                        <img src="/images/excluir.png" width="25" />
+
                                 </button>
+
+        
+                                <!-- Modal -->
+                                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog ">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                   <strong> Excluir Paciente ! </strong>
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Confirma a exclusão do registro ?</p>
+                                            
+                                            </div>
+                                                <input type="hidden" name="patient_id" id="patient_id" value="">
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+                                                <button type="submit" class="btn btn-danger">Excluir</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
                         </td>
                     </tr>
@@ -71,4 +99,17 @@
     <x-footer>
 
     </x-footer>
+
+    <script type="text/javascript">
+        $('#deleteModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget);
+          var recipientId = button.data('id');
+          console.log(recipientId);
+
+          var modal = $(this);
+          modal.find('#patient_id').val(recipientId);
+        })
+
+    </script>
+
 @endsection

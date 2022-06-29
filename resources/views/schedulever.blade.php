@@ -96,7 +96,7 @@
                 </div> --}}
                 </div>
                 <div class="form-group col-md-6 mt-2">
-                    <a href="{{ route('schedule') }}" class="btn btn-danger ">Voltar</a>
+                    <a href="{{ route('schedule') }}" class="btn btn-danger ">Cancelar</a>
                 </div>
         </form>
     </div>

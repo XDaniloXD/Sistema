@@ -63,13 +63,39 @@
                                 <img src="/images/edita.png" width="25" />
                             </a>
                             <form action="{{route('scheduledelete',$schedule->id)}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                    <button type="submit" class="btn btn-danger delete-btn ms-1 rounded" data-bs-toggle="tooltip" data-bs-placement="top" title="Excluir">
-                                        <img src="/images/excluir.png" width="25" />
-                                    </button>
+                                    @csrf
+                                    @method('DELETE')
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-danger delete-btn ms-1" 
+                                            data-bs-toggle="modal" data-bs-toggle="tooltip" data-bs-placement="top" 
+                                            data-bs-target="#deleteModal" data-id="{{$schedule->id}}" title="Excluir">
+    
+                                             <img src="/images/excluir.png" width="25" />
+                                     </button>
+    
+            
+                                <!-- Modal -->
+                                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog ">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">
+                                                    <strong>Excluir Agendamento !</strong>
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Confirma a exclusão do registro ?</p>
+                                            </div>
+                                                <input type="hidden" name="schedule_id" id="schedule_id" value="">
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+                                                <button type="submit" class="btn btn-danger">Excluir</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </form>
-                            {{--<a target="_blank" href="{{route('schedulepdf', $schedule->id)}}" class="btn btn-dark ms-1 rounded" >Pdf</a>--}}
                         </td>
                     </tr>
                 @empty
@@ -83,5 +109,17 @@
     <x-footer>
 
     </x-footer>
+
+    <script type="text/javascript">
+        $('#deleteModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget);
+          var recipientId = button.data('id');
+          console.log(recipientId);
+
+          var modal = $(this);
+          modal.find('#schedule_id').val(recipientId);
+        })
+
+    </script>
 
 @endsection

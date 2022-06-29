@@ -70,9 +70,9 @@ class ScheduleController extends Controller
     }
 
     //Função delete
-    public function scheduledelete($id) {
+    public function scheduledelete(Request $request, $id) {
 
-
+        $id = $request['schedule_id'];
         $schedule = Schedule::find($id);
         $schedule->delete();
         return redirect('/schedule')->with('warning','Consulta excluida!');

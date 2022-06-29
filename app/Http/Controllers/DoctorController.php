@@ -39,7 +39,11 @@ class DoctorController extends Controller
         return redirect()->route('doctor')->with('success','Medico cadastrado com sucesso!!');
     }
 
-    public function doctordelete($id) {
+    public function doctordelete(Request $request, $id) {
+        // Request $request so e obrigatorio caso eu delete por modal
+        $id = $request['doctor_id'];
+
+        // Acima se o delete for por modal
 
         $doctor = Doctor::findOrFail($id);
         $doctor->delete();
