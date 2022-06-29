@@ -18,9 +18,9 @@ class ScheduleController extends Controller
 
     public function schedule()
     {
-        
-        $schedules = Schedule::where('confirmed', 0 )->orderBy('date', 'asc')->orderBy('time', 'asc')->get();
+        $schedules = Schedule::orderBy('date', 'asc')->orderBy('time', 'asc')->get();
         return view('schedule', compact('schedules'));
+
     }
 
 
@@ -35,9 +35,9 @@ class ScheduleController extends Controller
     public function scheduletodas()
     {
 
-        $schedules = Schedule::orderBy('date', 'asc')->orderBy('time', 'asc')->get();
-        return view('schedule', compact('schedules'));
 
+        $schedules = Schedule::where('confirmed', 0 )->orderBy('date', 'asc')->orderBy('time', 'asc')->get();
+        return view('schedule', compact('schedules'));
     }
 
 
@@ -115,7 +115,7 @@ class ScheduleController extends Controller
         }
     }
 
-    
+
     public function schedulever($id)
     {
 

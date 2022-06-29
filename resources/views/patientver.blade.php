@@ -55,12 +55,12 @@
                            disabled>
                 </div>
 
-                    
+
                 <div class="form-group col-md-2">
                     <label for="sexo">Sexo</label>
                     <select class="form-control"
                             name="sexo"
-                            required 
+                            required
                             type="text"
                             disabled>
                             <option value="Feminino" {{($patient->sexo == 'Feminino' ? 'selected' : '')}}>Feminino</option>
@@ -72,8 +72,8 @@
                     <label for="address">Tipo-Sanguíneo</label>
                     <select class="form-control"
                             name="blood"
-                            id="blood" 
-                            required 
+                            id="blood"
+                            required
                             type="text"
                             disabled>
                             <option value="A+"  {{($patient->blood == 'A+'  ? 'selected' : '')}} >A+</option>
@@ -122,7 +122,7 @@
                 </div>
             </div>
             <div class="form-group col-md-6 mt-2">
-                <a href="{{ route('patient') }}" class="btn btn-danger ">Voltar</a>
+                <a href="{{ route('patient') }}" class="btn btn-danger ">Cancelar</a>
             </div>
         </form>
     </div>
