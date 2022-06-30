@@ -28,7 +28,8 @@
                            class="form-control"
                            required
                            id="age"
-                           name="age">
+                           name="age"
+                           maxlength="3">
                 </div>
             </div>
 
@@ -39,15 +40,17 @@
                            class="form-control"
                            required
                            id="weight"
-                           name="weight">
+                           name="weight"
+                           maxlength="2">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="height">Altura</label>
-                    <input type="text"
+                    <input type="number"
                            class="form-control"
                            required
                            id="height"
-                           name="height">
+                           name="height"
+                           maxlength="4">
                 </div>
 
                 <div class="form-group col-md-2">

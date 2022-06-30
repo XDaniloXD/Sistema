@@ -14,6 +14,7 @@ class PatientController extends Controller
     public function patient()
     {
         $patients = Patient::all();
+        
 
         return view('patient', compact('patients'));
     }

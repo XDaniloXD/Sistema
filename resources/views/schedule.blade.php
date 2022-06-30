@@ -12,12 +12,12 @@
 
         <div class="d-flex justify-content-end ">
             <div class="d-flex ms-5 justify-content-start">
-                <a href="{{route('createschedule')}}"  class="btn btn-sm btn-success mb-2 ms-1">Cadastrar Agendamento</a>
-                <a target="_blank" href="{{route('schedulespdf',['download'=>'pdf'])}}"  class="btn btn-sm btn-secondary mb-2 ms-1">Consulta em Pdf</a>
+                <a href="{{route('createschedule')}}"  class="btn btn-success mb-2 ms-1">Cadastrar Agendamento</a>
+                <a target="_blank" href="{{route('schedulespdf',['download'=>'pdf'])}}"  class="btn btn-secondary mb-2 ms-1">Consultas em Pdf</a>
             </div>
 
             <div class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle btn btn-outline-primary mb-2 ms-1" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle btn btn-primary mb-2 ms-1 text-white" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Status
                 </a>
                 <ul class="dropdown-menu " aria-labelledby="navbarScrollingDropdown">

@@ -6,7 +6,7 @@
         </x-menu>
 
         <div class="d-flex justify-content-between">
-            <h2>Editar Medico</h2>
+            <h2>Editar Médico</h2>
             <a href="{{route('doctoredit', $doctor->id)}}"  class="btn btn-sm btn-secondary mb-2">Lista de Médicos</a>
         </div>
         <form class="card card-body" method="POST" action="{{route('doctorupdtade', $doctor->id)}}">
