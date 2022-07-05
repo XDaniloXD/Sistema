@@ -47,7 +47,7 @@
                         <input type="date" class="form-control" required value="{{ $schedules->date }}" name="date">
 
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-2">
                         <label for="time">Hora </label>
                         <input type="time" class="form-control" required
                             value="{{ Carbon\Carbon::parse($schedules->time)->format('H:i') }}" name="time">

@@ -7,13 +7,13 @@
         </x-menu>
 
         <div class="d-flex justify-content-between">
-            <h2>Agendamentos Cadastrados</h2>
+            <h2>Consultas Agendadas</h2>
         </div>
 
         <div class="d-flex justify-content-end ">
             <div class="d-flex ms-5 justify-content-start">
-                <a href="{{route('createschedule')}}"  class="btn btn-success mb-2 ms-1">Cadastrar Agendamento</a>
-                <a target="_blank" href="{{route('schedulespdf',['download'=>'pdf'])}}"  class="btn btn-secondary mb-2 ms-1">Consultas em Pdf</a>
+                <a href="{{route('createschedule')}}"  class="btn btn-success mb-2 ms-1">+ Consulta</a>
+                <a target="_blank" href="{{route('schedulespdf',['download'=>'pdf'])}}"  class="btn btn-secondary mb-2 ms-1">Consultas Pdf</a>
             </div>
 
             <div class="nav-item dropdown">

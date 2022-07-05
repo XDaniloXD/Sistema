@@ -8,7 +8,7 @@
         <div class="d-flex justify-content-between ">
             <h2>Médicos Cadastrados</h2>
             <a href="{{route('createdoctor')}}"  class="btn btn-sm btn-success mb-2 text-center">
-                        Cadastar Médico
+                        Cadastrar Médico
               <img src="/images/doctor.png" width="30" />
             </a>
         </div>
@@ -16,7 +16,7 @@
             <table  id="pesquisa" class="table table-striped table-hover">
                  <thead class="table-info ">
                     <tr>
-                      <th scope="col">Matricula</th>
+                      <th scope="col">Matrícula</th>
                       <th scope="col">Nome</th>
                       <th scope="col">Especialidade</th>
                       <th scope="col">CRM</th>

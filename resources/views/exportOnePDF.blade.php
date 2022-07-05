@@ -29,24 +29,39 @@
 </div>
 
 
-    <div class="form-group col-md-3">
+    <div class="d-flex form-group col-md-3">
 
         <h5>Paciente:</h5>
 
-             <h6>{{ $schedules->patients->name }}</h6>
+             {{ $schedules->patients->name }}
+        <h5>Sexo:</h5>
+            {{ $schedules->patients->sexo }}
     </div>
     <hr>
 
-    <div class="form-group text-center">
+    <div class="container ">
 
-        <h5>Medico:</h5>
+            <div class="row ">
+                
+               <strong> Medico: </strong> 
+                {{ $schedules->doctors->name }}
+        
+            </div>
 
-            <h6>{{ $schedules->doctors->name }}</h6>
+            <div class="row ">
+               <strong>Especialidade:</strong> 
 
+                {{ $schedules->doctors->especialidade }}
+            </div>
+            <div class="row ">
+               <strong>CRM:</strong> 
+                {{$schedules->doctors->crm}}
+            </div>
+    <hr>
     </div>
     <div class="form-group col-md-3">
 
-            <h6 class="">Motivo da consulta:{{ $schedules->reason }}</h6>
+            <h6>Motivo da consulta:{{ $schedules->reason }}</h6>
 
     </div>
     <div class="form-group col-md-3">
@@ -57,6 +72,22 @@
 
     </div>
 
+    <div class="text-center fs-6">
+        
+            
+                <div> Medico:
 
+                    {{ $schedules->doctors->name }}
+                </div>
+            
+                <div>Especialidade:
 
+                    {{ $schedules->doctors->especialidade }}
+                </div> 
+            
+                <div>CRM:
+                    {{$schedules->doctors->crm}}
+                </div> 
+            
+    </div>
 </div>
